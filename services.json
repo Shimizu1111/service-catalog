@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ai-diagnostic-tool",
+    "name": "AI Diagnostic Tool",
+    "description": "AI\u3092\u6d3b\u7528\u3057\u305f\u8a3a\u65ad\u30c4\u30fc\u30eb",
+    "url": "",
+    "repo": "https://github.com/katsu/ai-diagnostic-tool",
+    "tags": ["AI", "\u30c4\u30fc\u30eb"],
+    "status": "active",
+    "platform": "GitHub Pages",
+    "createdAt": "2025-01-01"
+  },
+  {
+    "id": "paint-estimator",
+    "name": "Paint Estimator",
+    "description": "\u5857\u88c5\u898b\u7a4d\u3082\u308a\u8a08\u7b97\u30c4\u30fc\u30eb",
+    "url": "",
+    "repo": "https://github.com/katsu/paint-estimator",
+    "tags": ["\u898b\u7a4d\u3082\u308a", "\u30c4\u30fc\u30eb"],
+    "status": "active",
+    "platform": "GitHub Pages",
+    "createdAt": "2025-01-01"
+  },
+  {
+    "id": "ig-harness-oss",
+    "name": "IG Harness OSS",
+    "description": "Instagram\u9023\u643a\u30cf\u30fc\u30cd\u30b9\uff08OSS\uff09",
+    "url": "",
+    "repo": "https://github.com/katsu/ig-harness-oss",
+    "tags": ["Instagram", "OSS", "\u30cf\u30fc\u30cd\u30b9"],
+    "status": "active",
+    "platform": "GitHub Pages",
+    "createdAt": "2025-01-01"
+  }
+]

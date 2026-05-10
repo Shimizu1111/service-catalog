@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Catalog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Service Catalog</h1>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="openAddModal()">+ Add Service</button>
+    </div>
+  </header>
+
+  <div class="settings-bar">
+    <span class="settings-toggle" onclick="toggleSettings()">GitHub Settings</span>
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-row">
+        <div class="form-group">
+          <label>Owner / Repo</label>
+          <input type="text" id="ghRepo" placeholder="owner/repo">
+        </div>
+        <div class="form-group">
+          <label>Branch</label>
+          <input type="text" id="ghBranch" placeholder="main" value="main">
+        </div>
+        <div class="form-group">
+          <label>Personal Access Token</label>
+          <input type="password" id="ghToken" placeholder="ghp_...">
+        </div>
+        <button class="btn btn-primary" onclick="saveSettings()" style="align-self:flex-end">Save</button>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.5rem;">
+        Token is saved in localStorage only. Required scope: repo (Contents read/write).
+      </p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" class="search-box" id="searchBox" placeholder="Search services...">
+    <div id="filterButtons"></div>
+    <span class="service-count" id="serviceCount"></span>
+  </div>
+
+  <div class="grid" id="serviceGrid"></div>
+
+  <!-- Add / Edit Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Service</h2>
+      <input type="hidden" id="editId">
+      <div class="form-group">
+        <label>Service Name *</label>
+        <input type="text" id="fName" placeholder="My Awesome Tool">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="fDesc" placeholder="What does this service do?"></textarea>
+      </div>
+      <div class="form-group">
+        <label>URL</label>
+        <input type="text" id="fUrl" placeholder="https://example.github.io/my-tool">
+      </div>
+      <div class="form-group">
+        <label>Repository URL</label>
+        <input type="text" id="fRepo" placeholder="https://github.com/owner/repo">
+      </div>
+      <div class="form-group">
+        <label>Tags (comma separated)</label>
+        <input type="text" id="fTags" placeholder="AI, tool, automation">
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select id="fStatus">
+          <option value="active">Active</option>
+          <option value="wip">WIP</option>
+          <option value="archived">Archived</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Platform</label>
+        <select id="fPlatform">
+          <option value="GitHub Pages">GitHub Pages</option>
+          <option value="Cloudflare Pages">Cloudflare Pages</option>
+          <option value="Vercel">Vercel</option>
+          <option value="VPS">VPS</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-danger" id="deleteBtn" style="display:none" onclick="deleteService()">Delete</button>
+        <button class="btn btn-primary" onclick="saveService()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
