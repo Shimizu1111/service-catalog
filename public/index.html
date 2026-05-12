@@ -9,9 +9,7 @@
 <body>
   <header class="header">
     <h1>サービスカタログ</h1>
-    <div class="header-actions">
-      <button class="btn btn-primary" onclick="openAddModal()">+ サービス追加</button>
-    </div>
+    <div class="header-actions"></div>
   </header>
 
   <div class="toolbar">
@@ -24,91 +22,6 @@
 
   <div class="grid" id="serviceGrid"></div>
 
-  <!-- Add / Edit Modal -->
-  <div class="modal-overlay" id="modal">
-    <div class="modal">
-      <h2 id="modalTitle">サービス追加</h2>
-      <input type="hidden" id="editId">
-      <div class="form-group">
-        <label>サービス名 *</label>
-        <input type="text" id="fName" placeholder="My Awesome Tool">
-      </div>
-      <div class="form-group">
-        <label>説明</label>
-        <textarea id="fDesc" placeholder="このサービスの概要"></textarea>
-      </div>
-      <div class="form-group">
-        <label>URL</label>
-        <input type="text" id="fUrl" placeholder="https://example.pages.dev/my-tool">
-      </div>
-      <div class="form-group">
-        <label>リポジトリURL</label>
-        <input type="text" id="fRepo" placeholder="https://github.com/owner/repo">
-      </div>
-      <div class="form-group">
-        <label>業界</label>
-        <select id="fIndustry">
-          <option value="">未選択</option>
-          <option value="IT・通信">IT・通信</option>
-          <option value="金融・保険">金融・保険</option>
-          <option value="製造">製造</option>
-          <option value="小売・EC">小売・EC</option>
-          <option value="医療・ヘルスケア">医療・ヘルスケア</option>
-          <option value="教育">教育</option>
-          <option value="不動産・建設">不動産・建設</option>
-          <option value="物流・運輸">物流・運輸</option>
-          <option value="メディア・エンタメ">メディア・エンタメ</option>
-          <option value="飲食・サービス">飲食・サービス</option>
-          <option value="人材・HR">人材・HR</option>
-          <option value="エネルギー">エネルギー</option>
-          <option value="農業・食品">農業・食品</option>
-          <option value="官公庁・公共">官公庁・公共</option>
-          <option value="その他">その他</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>タグ（カンマ区切り）</label>
-        <input type="text" id="fTags" placeholder="AI, ツール, 自動化">
-      </div>
-      <div class="form-group">
-        <label>画像URL（最大3枚）</label>
-        <input type="text" id="fImage0" placeholder="画像1: https://example.com/image1.png" style="margin-bottom:0.4rem">
-        <input type="text" id="fImage1" placeholder="画像2: https://example.com/image2.png" style="margin-bottom:0.4rem">
-        <input type="text" id="fImage2" placeholder="画像3: https://example.com/image3.png">
-      </div>
-      <div class="form-group">
-        <label>デモ動画URL</label>
-        <input type="text" id="fDemoUrl" placeholder="https://youtube.com/watch?v=...">
-      </div>
-      <div class="form-group">
-        <label>外注費</label>
-        <input type="text" id="fCost" placeholder="30万円">
-      </div>
-      <div class="form-group">
-        <label>ステータス</label>
-        <select id="fStatus">
-          <option value="active">稼働中</option>
-          <option value="wip">開発中</option>
-          <option value="archived">アーカイブ</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>プラットフォーム</label>
-        <select id="fPlatform">
-          <option value="GitHub Pages">GitHub Pages</option>
-          <option value="Cloudflare Pages">Cloudflare Pages</option>
-          <option value="Vercel">Vercel</option>
-          <option value="VPS">VPS</option>
-          <option value="Other">その他</option>
-        </select>
-      </div>
-      <div class="form-actions">
-        <button class="btn btn-outline" onclick="closeModal()">キャンセル</button>
-        <button class="btn btn-danger" id="deleteBtn" style="display:none" onclick="deleteService()">削除</button>
-        <button class="btn btn-primary" onclick="saveService()">保存</button>
-      </div>
-    </div>
-  </div>
 
   <a class="fab-contact" href="https://example.com/lp" target="_blank">
     <span class="fab-icon">&#10132;</span>
