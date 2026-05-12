@@ -1,0 +1,8 @@
+name = "service-catalog"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "service-catalog-db"
+database_id = "1f3d677f-4a0a-456b-995d-4e418cf514ef"
